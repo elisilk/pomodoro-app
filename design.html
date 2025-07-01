@@ -1,0 +1,470 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="style.css" rel="stylesheet" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <meta
+      name="description"
+      content="Solution to Frontend Mentor's Pomodoro app design challenge."
+    />
+    <title>Frontend Mentor | Pomodoro app | Design System</title>
+  </head>
+  <body
+    data-theme-color="red"
+    data-theme-font="sans"
+    class="page--design-system"
+  >
+    <svg class="svg-symbol-defs">
+      <symbol
+        id="icon-check"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 14 11"
+        fill="none"
+      >
+        <path
+          d="M0.797852 5.27368L4.75048 9.22631L13.2031 0.773682"
+          stroke="#161932"
+          stroke-width="2"
+        />
+      </symbol>
+
+      <symbol
+        id="icon-arrow-up"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 14 7"
+      >
+        <path fill="none" d="M1 6l6-4 6 4" />
+      </symbol>
+
+      <symbol
+        id="icon-arrow-down"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 14 7"
+      >
+        <path fill="none" d="M1 1l6 4 6-4" />
+      </symbol>
+    </svg>
+
+    <div class="site">
+      <main class="main layout flow" id="main">
+        <h1>Design System</h1>
+
+        <section class="section flow" id="colors">
+          <h2>Colors</h2>
+        </section>
+
+        <section class="section flow" id="typography">
+          <h2>Typography</h2>
+
+          <div data-theme-font="sans">
+            <div class="typography-preset">
+              <div class="typography-preset__info">
+                <div>
+                  <h3>Text Preset 1 (Font 1)</h3>
+                  <p>Kumbh Sans Bold</p>
+                </div>
+                <div>
+                  <p>100px</p>
+                  <p>125% Line Height</p>
+                  <p>-5px Letter Spacing</p>
+                </div>
+              </div>
+              <p class="text-preset1">Lorem</p>
+            </div>
+          </div>
+
+          <div data-theme-font="serif">
+            <div class="typography-preset">
+              <div class="typography-preset__info">
+                <div>
+                  <h3>Text Preset 1 (Font 2)</h3>
+                  <p>Roboto Slab Bold</p>
+                </div>
+                <div>
+                  <p>100px</p>
+                  <p>130% Line Height</p>
+                  <p>0px Letter Spacing</p>
+                </div>
+              </div>
+              <p class="text-preset1">Lorem</p>
+            </div>
+          </div>
+
+          <div data-theme-font="mono">
+            <div class="typography-preset">
+              <div class="typography-preset__info">
+                <div>
+                  <h3>Text Preset 1 (Font 3)</h3>
+                  <p>Space Mono Regular</p>
+                </div>
+                <div>
+                  <p>100px</p>
+                  <p>150% Line Height</p>
+                  <p>-10px Letter Spacing</p>
+                </div>
+              </div>
+              <p class="text-preset1">Lorem</p>
+            </div>
+          </div>
+        </section>
+
+        <section class="section flow" id="spacing">
+          <h2>Spacing</h2>
+        </section>
+
+        <section class="section flow" id="components">
+          <h2>Components</h2>
+
+          <div class="component component--clocks">
+            <h3>Clock</h3>
+
+            <div class="variants variants--clocks" data-theme-font="sans">
+              <div class="variants__inner">
+                <countdown-clock
+                  id="clock-ex1"
+                  total-time="1:00"
+                  remaining-time="1:07"
+                  auto-start="false"
+                >
+                  <div role="alert" aria-live="polite">
+                    <p>Loading, please wait…</p>
+                  </div>
+                </countdown-clock>
+
+                <countdown-clock
+                  id="clock-ex2"
+                  total-time="25:00"
+                  remaining-time="8:29"
+                  auto-start="false"
+                  data-theme-color="red"
+                  data-theme-font="sans"
+                >
+                  <div role="alert" aria-live="polite">
+                    <p>Loading, please wait…</p>
+                  </div>
+                </countdown-clock>
+
+                <countdown-clock
+                  id="clock-ex3"
+                  total-time="0:10"
+                  remaining-time="0:07"
+                  auto-start="false"
+                  data-theme-color="cyan"
+                  data-theme-font="serif"
+                >
+                  <div role="alert" aria-live="polite">
+                    <p>Loading, please wait…</p>
+                  </div>
+                </countdown-clock>
+
+                <countdown-clock
+                  id="clock-ex4"
+                  total-time="25:00"
+                  remaining-time="33:01"
+                  data-theme-color="purple"
+                  data-theme-font="mono"
+                >
+                  <div role="alert" aria-live="polite">
+                    <p>Loading, please wait…</p>
+                  </div>
+                </countdown-clock>
+              </div>
+            </div>
+          </div>
+
+          <div class="component component--tabs">
+            <h3>Tab</h3>
+
+            <div class="variants variants--tabs">
+              <div class="variants__inner">
+                <div class="tab text-preset3">
+                  <label>
+                    <input
+                      type="radio"
+                      name="tab-ex1"
+                      id="tab-ex1-opt1"
+                      checked
+                    />
+                    <span>pomodoro</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="tab-ex1" id="tab-ex1-opt2" />
+                    <span>short break</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="tab-ex1" id="tab-ex1-opt3" />
+                    <span>long break</span>
+                  </label>
+                </div>
+
+                <div class="tab text-preset3 active">
+                  <label>
+                    <input
+                      type="radio"
+                      name="tab-ex2"
+                      id="tab-ex2-opt1"
+                      checked
+                    />
+                    <span>pomodoro</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="tab-ex2" id="tab-ex2-opt2" />
+                    <span>short break</span>
+                  </label>
+                  <label>
+                    <input type="radio" name="tab-ex2" id="tab-ex2-opt3" />
+                    <span>long break</span>
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="component component--buttons">
+            <h3>Button</h3>
+            <div class="variants variants--buttons">
+              <div class="variants__inner">
+                <button class="button">Apply</button>
+                <button class="button active">Apply</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="component component--forms">
+            <h3>Numeric (Form)</h3>
+
+            <div class="variants variants--forms">
+              <div class="variants__inner">
+                <div class="numeric__wrapper">
+                  <div class="numeric">
+                    <label
+                      class="numeric__label text-settings-preset4"
+                      for="numeric-ex1"
+                      >pomodoro</label
+                    >
+                    <div class="numeric__input">
+                      <input
+                        class="input-number text-settings-preset3"
+                        id="numeric-ex1"
+                        type="text"
+                        inputmode="numeric"
+                        pattern="[0-9]*"
+                        value="25"
+                      />
+                      <div class="numeric__controls">
+                        <button
+                          class="numeric__stepper"
+                          type="button"
+                          data-step="+1"
+                        >
+                          <svg class="icon-arrow">
+                            <use xlink:href="#icon-arrow-up"></use>
+                          </svg>
+                        </button>
+                        <button
+                          class="numeric__stepper"
+                          type="button"
+                          data-step="-1"
+                        >
+                          <svg class="icon-arrow">
+                            <use xlink:href="#icon-arrow-down"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="numeric__wrapper">
+                  <div class="numeric active">
+                    <label
+                      class="numeric__label text-settings-preset4"
+                      for="numeric-ex2"
+                      >pomodoro</label
+                    >
+                    <div class="numeric__input">
+                      <input
+                        class="input-number text-settings-preset3"
+                        id="numeric-ex2"
+                        type="text"
+                        inputmode="numeric"
+                        pattern="[0-9]*"
+                        value="25"
+                      />
+                      <div class="numeric__controls">
+                        <button
+                          class="numeric__stepper"
+                          type="button"
+                          data-step="+1"
+                        >
+                          <svg class="icon-arrow">
+                            <use xlink:href="#icon-arrow-up"></use>
+                          </svg>
+                        </button>
+                        <button
+                          class="numeric__stepper"
+                          type="button"
+                          data-step="-1"
+                        >
+                          <svg class="icon-arrow">
+                            <use xlink:href="#icon-arrow-down"></use>
+                          </svg>
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="component component--selections">
+            <h3>Selection</h3>
+
+            <div class="variants variants--selections">
+              <div class="variants__inner">
+                <div class="selection">
+                  <div class="fieldset-inputs">
+                    <label class="selection--sans text-settings-preset2">
+                      <input
+                        type="radio"
+                        id="selection-ex1-opt1"
+                        name="selection-ex1"
+                        value="sans"
+                        checked
+                      />
+                      <span>Aa</span>
+                    </label>
+                    <label class="selection--serif text-settings-preset2">
+                      <input
+                        type="radio"
+                        id="selection-ex1-opt2"
+                        name="selection-ex1"
+                        value="serif"
+                      />
+                      <span>Aa</span>
+                    </label>
+                    <label class="selection--mono text-settings-preset2">
+                      <input
+                        type="radio"
+                        id="selection-ex1-opt3"
+                        name="selection-ex1"
+                        value="mono"
+                      />
+                      <span>Aa</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="selection">
+                  <div class="fieldset-inputs">
+                    <label class="selection--sans text-settings-preset2">
+                      <input
+                        type="radio"
+                        id="selection-ex2-opt1"
+                        name="selection-ex2"
+                        value="sans"
+                        checked
+                      />
+                      <span>Aa</span>
+                    </label>
+                    <label
+                      class="selection--serif text-settings-preset2 active"
+                    >
+                      <input
+                        type="radio"
+                        id="selection-ex2-opt2"
+                        name="selection-ex2"
+                        value="serif"
+                      />
+                      <span>Aa</span>
+                    </label>
+                    <label class="selection--mono text-settings-preset2">
+                      <input
+                        type="radio"
+                        id="selection-ex2-opt3"
+                        name="selection-ex2"
+                        value="mono"
+                      />
+                      <span>Aa</span>
+                    </label>
+                  </div>
+                </div>
+
+                <div class="selection selection--color">
+                  <div class="fieldset-inputs">
+                    <label class="selection--red">
+                      <input
+                        type="radio"
+                        id="selection-ex3-opt1"
+                        name="selection-ex3"
+                        value="red"
+                        checked
+                      />
+                      <span class="sr-only">Red</span>
+                    </label>
+                    <label class="selection--cyan">
+                      <input
+                        type="radio"
+                        id="selection-ex3-opt2"
+                        name="selection-ex3"
+                        value="cyan"
+                      />
+                      <span class="sr-only">Cyan</span>
+                    </label>
+                    <label class="selection--purple">
+                      <input
+                        type="radio"
+                        id="selection-ex3-opt3"
+                        name="selection-ex3"
+                        value="purple"
+                      />
+                      <span class="sr-only">Purple</span>
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <dialog class="settings-dialog" closedby="any">
+          <form>
+            <h2>Settings</h2>
+            <button>
+              <img
+                src="assets/icons/icon-close.svg"
+                width="14"
+                height="14"
+                alt="Cancel dialog"
+              />
+            </button>
+            <fieldset>
+              <legend>Time (minutes)</legend>
+              pomodoro short break long break
+            </fieldset>
+            <fieldset>
+              <legend>Font</legend>
+            </fieldset>
+            <fieldset>
+              <legend>Color</legend>
+            </fieldset>
+            <button class="button" type="submit">Apply</button>
+          </form>
+        </dialog>
+      </main>
+    </div>
+
+    <script src="script.js"></script>
+  </body>
+</html>

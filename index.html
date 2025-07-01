@@ -1,0 +1,356 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link href="style.css" rel="stylesheet" />
+
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./assets/favicon-32x32.png"
+    />
+
+    <meta
+      name="description"
+      content="Solution to Frontend Mentor's Pomodoro app design challenge."
+    />
+    <title>Frontend Mentor | Pomodoro app</title>
+  </head>
+  <body class="page--index">
+    <svg class="svg-symbol-defs">
+      <symbol
+        id="icon-check"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 14 11"
+        fill="none"
+      >
+        <path
+          d="M0.797852 5.27368L4.75048 9.22631L13.2031 0.773682"
+          stroke="#161932"
+          stroke-width="2"
+        />
+      </symbol>
+
+      <symbol
+        id="icon-arrow-up"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 14 7"
+      >
+        <path fill="none" d="M1 6l6-4 6 4" />
+      </symbol>
+
+      <symbol
+        id="icon-arrow-down"
+        xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 14 7"
+      >
+        <path fill="none" d="M1 1l6 4 6-4" />
+      </symbol>
+    </svg>
+
+    <div class="site" data-theme-color="red" data-theme-font="sans">
+      <header class="header layout">
+        <div class="logo">
+          <img
+            src="assets/logo.svg"
+            width="153"
+            height="32"
+            alt="Pomodoro logo"
+          />
+        </div>
+
+        <div class="tab text-preset3">
+          <label>
+            <input
+              type="radio"
+              name="stage"
+              id="stage-pomodoro"
+              value="pomodoro"
+              checked
+            />
+            <span>pomodoro</span>
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="stage"
+              id="stage-short-break"
+              value="short-break"
+            />
+            <span>short break</span>
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="stage"
+              id="stage-long-break"
+              value="long-break"
+            />
+            <span>long break</span>
+          </label>
+        </div>
+      </header>
+
+      <main class="main layout" id="main">
+        <div class="countdown-clock__container">
+          <countdown-clock
+            id="countdown-clock"
+            total-time="25:00"
+            auto-start="false"
+          >
+            <div role="alert" aria-live="polite">
+              <p>Loading, please wait…</p>
+            </div>
+          </countdown-clock>
+        </div>
+
+        <div class="settings-control">
+          <button class="settings-open-button">
+            <span class="sr-only">Open settings</span>
+            <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
+              <path
+                d="M26.965 17.682l-2.927-2.317c.055-.448.097-.903.097-1.365 0-.462-.042-.917-.097-1.365l2.934-2.317a.702.702 0 00.167-.896l-2.775-4.851a.683.683 0 00-.847-.301l-3.454 1.407a10.506 10.506 0 00-2.345-1.379l-.52-3.71A.716.716 0 0016.503 0h-5.55a.703.703 0 00-.687.588l-.52 3.71c-.847.357-1.63.819-2.345 1.379L3.947 4.27a.691.691 0 00-.847.301L.325 9.422a.705.705 0 00.167.896l2.927 2.317c-.055.448-.097.903-.097 1.365 0 .462.042.917.097 1.365L.492 17.682a.702.702 0 00-.167.896L3.1 23.429a.683.683 0 00.847.301L7.4 22.323a10.506 10.506 0 002.345 1.379l.52 3.71c.056.329.34.588.687.588h5.55a.703.703 0 00.687-.588l.52-3.71c.847-.357 1.631-.819 2.346-1.379l3.454 1.407c.313.119.673 0 .847-.301l2.775-4.851a.705.705 0 00-.167-.896zM13.73 18.9c-2.685 0-4.857-2.191-4.857-4.9 0-2.709 2.172-4.9 4.857-4.9 2.684 0 4.856 2.191 4.856 4.9 0 2.71-2.172 4.9-4.856 4.9z"
+              />
+            </svg>
+          </button>
+        </div>
+      </main>
+    </div>
+
+    <dialog class="settings-dialog" closedby="closerequest">
+      <form id="settings-form" class="settings-dialog-form">
+        <div class="settings-header settings-layout">
+          <div class="settings-header-row">
+            <h2 class="text-settings-preset1">Settings</h2>
+            <button class="settings-cancel-button" type="button">
+              <span class="sr-only">Close settings</span>
+              <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14">
+                <path
+                  fill-rule="evenodd"
+                  d="M11.95.636l1.414 1.414L8.414 7l4.95 4.95-1.414 1.414L7 8.414l-4.95 4.95L.636 11.95 5.586 7 .636 2.05 2.05.636 7 5.586l4.95-4.95z"
+                />
+              </svg>
+            </button>
+          </div>
+        </div>
+
+        <div class="settings-main settings-layout">
+          <fieldset class="settings-fieldset settings-fieldset--time">
+            <div class="fieldset-label">
+              <legend class="sr-only">Time (minutes)</legend>
+              <span class="text-settings-preset3">Time (minutes)</span>
+            </div>
+
+            <div class="fieldset-inputs fieldset-inputs--time">
+              <div class="numeric__wrapper">
+                <div class="numeric">
+                  <label
+                    class="numeric__label text-settings-preset4"
+                    for="settings-input-time-pomodoro"
+                    >pomodoro</label
+                  >
+                  <div class="numeric__input">
+                    <input
+                      class="input-number text-settings-preset3"
+                      id="settings-input-time-pomodoro"
+                      type="text"
+                      inputmode="numeric"
+                      pattern="[0-9]*"
+                      value="25"
+                    />
+                    <div class="numeric__controls">
+                      <button
+                        class="numeric__stepper"
+                        type="button"
+                        data-step="+1"
+                      >
+                        <svg class="icon-arrow">
+                          <use xlink:href="#icon-arrow-up"></use>
+                        </svg>
+                      </button>
+                      <button
+                        class="numeric__stepper"
+                        type="button"
+                        data-step="-1"
+                      >
+                        <svg class="icon-arrow">
+                          <use xlink:href="#icon-arrow-down"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="numeric__wrapper">
+                <div class="numeric">
+                  <label
+                    class="numeric__label text-settings-preset4"
+                    for="settings-input-time-short-break"
+                    >short break</label
+                  >
+                  <div class="numeric__input">
+                    <input
+                      class="input-number text-settings-preset3"
+                      id="settings-input-time-short-break"
+                      type="text"
+                      inputmode="numeric"
+                      pattern="[0-9]*"
+                      value="5"
+                    />
+                    <div class="numeric__controls">
+                      <button
+                        class="numeric__stepper"
+                        type="button"
+                        data-step="+1"
+                      >
+                        <svg class="icon-arrow">
+                          <use xlink:href="#icon-arrow-up"></use>
+                        </svg>
+                      </button>
+                      <button
+                        class="numeric__stepper"
+                        type="button"
+                        data-step="-1"
+                      >
+                        <svg class="icon-arrow">
+                          <use xlink:href="#icon-arrow-down"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <div class="numeric__wrapper">
+                <div class="numeric">
+                  <label
+                    class="numeric__label text-settings-preset4"
+                    for="settings-input-time-long-break"
+                    >long break</label
+                  >
+                  <div class="numeric__input">
+                    <input
+                      class="input-number text-settings-preset3"
+                      id="settings-input-time-long-break"
+                      type="text"
+                      inputmode="numeric"
+                      pattern="[0-9]*"
+                      value="15"
+                    />
+                    <div class="numeric__controls">
+                      <button
+                        class="numeric__stepper"
+                        type="button"
+                        data-step="+1"
+                      >
+                        <svg class="icon-arrow">
+                          <use xlink:href="#icon-arrow-up"></use>
+                        </svg>
+                      </button>
+                      <button
+                        class="numeric__stepper"
+                        type="button"
+                        data-step="-1"
+                      >
+                        <svg class="icon-arrow">
+                          <use xlink:href="#icon-arrow-down"></use>
+                        </svg>
+                      </button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </fieldset>
+
+          <fieldset class="settings-fieldset selection selection--font">
+            <div class="fieldset-label">
+              <legend class="sr-only">Font</legend>
+              <span class="text-settings-preset3">Font</span>
+            </div>
+            <div class="fieldset-inputs">
+              <label class="selection--sans text-settings-preset2">
+                <input
+                  type="radio"
+                  id="settings-input-theme-font-sans"
+                  name="settings-input-theme-font"
+                  value="sans"
+                  checked
+                />
+                <span>Aa</span>
+              </label>
+              <label class="selection--serif text-settings-preset2">
+                <input
+                  type="radio"
+                  id="settings-input-theme-font-serif"
+                  name="settings-input-theme-font"
+                  value="serif"
+                />
+                <span>Aa</span>
+              </label>
+              <label class="selection--mono text-settings-preset2">
+                <input
+                  type="radio"
+                  id="settings-input-theme-font-mono"
+                  name="settings-input-theme-font"
+                  value="mono"
+                />
+                <span>Aa</span>
+              </label>
+            </div>
+          </fieldset>
+
+          <fieldset class="settings-fieldset selection selection--color">
+            <div class="fieldset-label">
+              <legend class="sr-only">Color</legend>
+              <span class="text-settings-preset3">Color</span>
+            </div>
+
+            <div class="fieldset-inputs">
+              <label class="selection--red">
+                <input
+                  type="radio"
+                  id="settings-input-theme-color-red"
+                  name="settings-input-theme-color"
+                  value="red"
+                  checked
+                />
+                <span class="sr-only">Red</span>
+              </label>
+              <label class="selection--cyan">
+                <input
+                  type="radio"
+                  id="settings-input-theme-color-cyan"
+                  name="settings-input-theme-color"
+                  value="cyan"
+                />
+                <span class="sr-only">Cyan</span>
+              </label>
+              <label class="selection--purple">
+                <input
+                  type="radio"
+                  id="settings-input-theme-color-purple"
+                  name="settings-input-theme-color"
+                  value="purple"
+                />
+                <span class="sr-only">Purple</span>
+              </label>
+            </div>
+          </fieldset>
+        </div>
+
+        <div class="settings-footer settings-layout">
+          <div class="settings-footer-row">
+            <button class="button" type="submit">Apply</button>
+          </div>
+        </div>
+      </form>
+    </dialog>
+
+    <script src="script.js"></script>
+  </body>
+</html>
