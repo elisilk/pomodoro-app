@@ -283,7 +283,7 @@ class CountdownClock extends HTMLElement {
       </div>
       <div class="countdown-clock__text">
         <div class="countdown-clock__time text-preset1" data-progress-time></div>
-        <button class="countdown-clock__control-button text-preset2" value="start"><span>start</span></button>
+        <button class="countdown-clock__control-button text-preset2" type="button" value="start"><span>start</span></button>
       </div>
     </div>
     `;

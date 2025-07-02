@@ -54,6 +54,7 @@
     <div class="site" data-theme-color="red" data-theme-font="sans">
       <header class="header layout">
         <div class="logo">
+          <h1 class="sr-only">Pomodoro App</h1>
           <img
             src="assets/logo.svg"
             width="153"
@@ -99,6 +100,7 @@
           <countdown-clock
             id="countdown-clock"
             total-time="25:00"
+            remaining-time="17:59"
             auto-start="false"
           >
             <div role="alert" aria-live="polite">
@@ -108,7 +110,7 @@
         </div>
 
         <div class="settings-control">
-          <button class="settings-open-button">
+          <button class="settings-open-button" type="button">
             <span class="sr-only">Open settings</span>
             <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28">
               <path
