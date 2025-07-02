@@ -28,10 +28,10 @@ Users should be able to:
 
 ### Screenshots
 
-|            Mobile designed at 375px:            |           Tablet designed at 1440px:            | Desktop designed at 1440px:                      |
-| :---------------------------------------------: | :---------------------------------------------: | ------------------------------------------------ |
-|  ![](./screenshots/screenshot-home-mobile.png)  |  ![](./screenshots/screenshot-home-tablet.png)  | ![](./screenshots/screenshot-home-desktop.png)   |
-| ![](./screenshots/screenshot-detail-mobile.png) | ![](./screenshots/screenshot-detail-tablet.png) | ![](./screenshots/screenshot-detail-desktop.png) |
+|               Mobile designed at 375px:                |               Tablet designed at 1440px:               | Desktop designed at 1440px:                             |
+| :----------------------------------------------------: | :----------------------------------------------------: | ------------------------------------------------------- |
+| ![](./screenshots/screenshot-home-sans-red-mobile.png) | ![](./screenshots/screenshot-home-sans-red-tablet.png) | ![](./screenshots/screenshot-home-sans-red-desktop.png) |
+|   ![](./screenshots/screenshot-settings-mobile.png)    |   ![](./screenshots/screenshot-settings-tablet.png)    | ![](./screenshots/screenshot-settings-desktop.png)      |
 
 ### Links
 
